@@ -1,4 +1,4 @@
-# CSS Grid
+# CSS Grid and Breakpoints
 
 CSS Grid can be used to build simple and skeletal layouts. It can also be used to create polished, professional-level layouts.
 
@@ -6,92 +6,70 @@ In this activity, you will use CSS Grid to re-create the design of an online fur
 
 ## Instructions
 
-### Part 1: Hero Section
+### Part 3: Responsive Breakpoint
 
-Here is what we will build in this section!
+Let's make our page responsive!
 
-  ![Part 1 Solution](images/part-1-solution.png)
+* Write a `media query` that targets a screen size with the `max-width of 1000px`.
 
-* Open the files `index.html` and `style.css`. 
+> **Note:** You must write your CSS selectors within the media query. You’re doing it right if the selectors you’re writing are {between the media query brackets}, not outside them. 
 
-  * You’ll notice that the HTML and CSS for the navigation bar code have already been completed along with some typography-related CSS.
+* Correct selector placement:
 
-* The HTML for the grid in the image at the beginning of this activity has already been completed. Review the HTML structure below.
+  ```css 
+  @media only screen and (max-width: 1000px) {
+    // Your new CSS selectors go here
+  }
+  ``` 
 
-  * Make sure you review the index.html activity as you write your CSS selectors.
+* In your newly written media query, write a CSS selector that targets the `id` of `navigation`.
 
-  ![Part 1 HTML](images/part-1-html.png)
+* In your CSS selector, give it the property `display` with a value of `none`. Write a CSS selector that targets the `class` of `icons`.
 
-* In `style.css`, create a selector that targets the `heroGrid ID`.
+* Give the CSS selector the property `margin-left` with a value of `auto`.
 
-  ![heroGrid CSS Selector](images/heroGrid-css-selector.png)
+* Write a `media query` that targets a screen size with the `max-width of 600px`.
 
-* Add the following properties to define the overall size of the grid:
+* Write a CSS selector that targets the `id` of `headline`:
 
-  ![Grid Size Properties](images/grid-size-properties.png)
+  * Give your selector the CSS property of `position` with a value of `static`.
 
-* Now that you have sized the CSS Grid, it’s time to add more CSS properties. Use the `grid-template-rows:`, `grid-template-columns:`, and `grid-template-areas`: properties to create the structure of the CSS Grid.
+  * Give your selector the CSS property of `margin` with a value of `20px`.
 
-* The `#heroGrid` ID at the top of the page has two rows and two columns.
+* Write a CSS selector that targets the `id` of `heroGrid`: 
 
-  * The first row and first column each occupy `75%` of their respective areas.
+  * Give your CSS selector the CSS property of `grid-template-areas`.
 
-  * The second row and second column each occupy the remaining `25%` of their respective areas.
+  * Rewrite the template areas so they display as follows:
 
-  * Use the values above for the `grid-template-rows:` and `grid-template-columns:` properties.
+    * “featuredProduct featuredProduct”
+    * “secondaryProduct CTA”
 
-  * **CSS hint:** Do not use commas between percentages. 
+  * This will cause our grid to restructure and display better on mobile devices.
 
-* Hero grid layout visual:
+* Write a CSS selector that targets the `id` of `categoryGrid`: 
 
-  ![Hero Grid Layout](images/hero-grid-layout.png)
+  * Give your CSS selector the property of `grid-template-rows` with a value of `300px 300px 300px 300px 300px`. 
 
-* Next, add to your CSS: `#heroGrid{ grid-template-areas: }`.
+> **Note:** You need to create more rows in your grid for your content to occupy. In the previous grid’s template areas (Step 3, above), you have two rows. You will be creating five rows in your adjusted grid-template-areas.
 
-* **Hint:** The `featuredProduct` occupies the top and bottom left areas, the `secondaryProduct` is in the top right, and the `CTA` is in the bottom right.
+* Give your CSS selector the property of `grid-template-columns` with a value of `1fr`.
 
-* Add content to the CSS Grid.
+* Give your CSS selector the CSS property of `grid-template-areas`.
 
-  * HTML reference:
+* Rewrite the template areas, so they display as follows:
 
-  ![HTML Reference](images/html-reference.png)
+  * "Bookcases"
 
-* Create three CSS selectors that target the IDs of each area within the grid from the HTML: `featuredProduct`, `secondaryProduct`, and `CTA`.
+  * "Bedroom"
 
-  * Within each selector, define the value for the `grid-area:` property so that each CSS selector and the CSS contained within it is associated with the correct area within the grid.
+  * "Patio"
 
-  * **Hint:** Spelling and capitalization in the syntax matter here, so pay attention.
+  * "Couches"
+  
+  * "Desks"
 
-* Add a `background-image:` to each `.heroGridArea` class selector using the images provided in the images folder.
-
-* Add the following properties and values to the `#CTA ID` selector. These will be used to style content within this grid area.
-
-  ![CTA Properties](images/CTA-properties.png)
-
-* Notice the repeated `.heroGridArea` class on each grid area in `index.html`. You can use CSS to target all instances of that class and style each instance the same way.
-Create a CSS selector that targets the `.heroGridArea` class and add the following CSS properties:
-
-  ![heroGridArea Properties](images/heroGridArea-properties.png)
-
-* Open `index.html` in your browser. It should almost look complete, except for the fact that the headline `div` isn’t in the right place.
-
-* In order to align the headline `div`, add a `border: 5px solid #FF6200;`.
-
-* Next, add a transparent `background-color:`. 
-
-  * You could do this with a transparent image or you can use the  `rgba()` function to define red, green, blue, and alpha (opacity) values for a color.
-
-  * Set the value for background-color to `rgba(255,255,255,0.8);`. 
-
-  * This will set the background color to white at 80% opacity. 
-
-* Position the headline `div` so that it’s floating above and between the `featuredProduct` and `secondaryProduct` grid areas.
-
-* **Hint:** You will need to use `position: absolute;` along with top and right values to achieve this.
-
-* Lastly, add a `z-index value` to move the `headline` `div` above its parent and then add `padding` to create some spacing.
-
-* Now, finally, open index.html in your browser. You should see your final result—the grid you just built!
+* Refresh the page. Check out your work!  
 
 ---
 
